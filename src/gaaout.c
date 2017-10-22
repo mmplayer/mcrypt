@@ -138,8 +138,8 @@ void gaa_help(void)
 	__gaa_helpsingle('k', "key", _("KEY1 KEY2...KEYN "), _("Specify the key(s)"));
 	__gaa_helpsingle(0, "noiv", "", _("Do not use an IV."));
 	__gaa_helpsingle('b', "bare", "", _("Do not keep algorithm information in the encrypted file."));
-	__gaa_helpsingle('z', "gzip", "", _("Use gzip to compress files before encryption."));
-	__gaa_helpsingle('p', "bzip2", "", _("Use bzip2 to compress files before encryption."));
+	__gaa_helpsingle('z', "gzip", "", _("Use gzip to compress/decompress files before/after encryption/decryption. NOTE: cannot be used if openpgp mode is active."));
+	__gaa_helpsingle('p', "bzip2", "", _("Use bzip2 to compress/decompress files before/after encryption/decryption. NOTE: cannot be used if openpgp mode is active."));
 	__gaa_helpsingle(0, "flush", "", _("Immediately flush the output"));
 	__gaa_helpsingle('l', "doublecheck", "", _("Double check passwords."));
 	__gaa_helpsingle('u', "unlink", "", _("Unlink the input file after encryption or decryption."));

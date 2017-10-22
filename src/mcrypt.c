@@ -552,11 +552,15 @@ int main(int argc, char **argv)
 	       continue;
 	    }
 #ifdef ZIP
+	    if ((openpgp != 0) && ( gzipflag == TRUE || bzipflag == TRUE )) {
+		err_quit(_("Error: Cannot use -z with openpgp mode (does not call gzip or bzip)\n"));
+	    }
+
 	    if (stream_flag == FALSE) {
 	       if (gzipflag == TRUE)
-		  strcat(outfile, ".gz");
+		  if (openpgp == 0) strcat(outfile, ".gz");
 	       if (bzipflag == TRUE)
-		  strcat(outfile, ".bz2");
+		  if (openpgp == 0) strcat(outfile, ".bz2");
 	    }
 #endif
 	    strcat(outfile, ".nc");
